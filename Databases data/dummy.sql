@@ -14,7 +14,7 @@ insert into user_login values(1004,"ruturaj04","ruturaj04@gmail.com","1234","col
 insert into user_login values(1005,"sujit05","sujit05@gmail.com","1234","student");
 
 #student stud
-create table student_login(stud_id int primary key, user_id int , stud_first_name varchar(255), stud_last_name varchar(255), stud_city varchar(255),stud_state varchar(255), stud_qualification varchar(255), stud_entrance_exam varchar(255),stud_exam_score float,clg_id int ,foreign key(user_id) references user_login(user_id),foreign key(clg_id) references college );
+create table student_login(stud_id int primary key, user_id int , stud_first_name varchar(255), stud_last_name varchar(255), stud_city varchar(255),stud_state varchar(255), stud_qualification varchar(255), stud_entrance_exam varchar(255),stud_exam_score float,clg_id int ,foreign key(user_id) references user_login(user_id),foreign key(clg_id) references college (clg_Id) );
 
 insert into student_login values(1,1001,"Ashish","Mahajan","Pune", "Maharashtra","12th","CET",100);
 
@@ -134,27 +134,27 @@ insert into stream values(9,"LLB","After earning a degree in corporate law, stud
 #branch brch 
 create table branch(brch_id int primary key,brch_name varchar(255), brch_duration varchar(255));
 
-insert into branch values(1,"Mechanical Engineering", 4,"4 years");
+insert into branch values(1,"Mechanical Engineering","4 years");
 
-insert into branch values(2,"Computer Engineering", 4,"4 years");
+insert into branch values(2,"Computer Engineering","4 years");
 
-insert into branch values(3,"Civil Engineering", 4,"4 years");
+insert into branch values(3,"Civil Engineering","4 years");
 
-insert into branch values(4,"Computer Science", 7,"3 years");
+insert into branch values(4,"Computer Science","3 years");
 
-insert into branch values(5,"Physics", 7,"3 years");
+insert into branch values(5,"Physics","3 years");
 
-insert into branch values(6,"Mathematics", 7,"3 years");
+insert into branch values(6,"Mathematics","3 years");
 
-insert into branch values(7,"Urban Planning", 5,"3-4 years");
+insert into branch values(7,"Urban Planning","3-4 years");
 
-insert into branch values(8,"Interior", 5,"4 years");
+insert into branch values(8,"Interior","4 years");
 
-insert into branch values(9,"Design", 5,"4 years");
+insert into branch values(9,"Design","4 years");
 
-insert into branch values(10,"BDS", 8,"5.5 years");
+insert into branch values(10,"BDS","5.5 years");
 
-insert into branch values(11,"BAMS", 8,"5.5 years");
+insert into branch values(11,"BAMS","5.5 years");
 
 #ranking rnk
 create table ranking(rnk_id int primary key ,clg_id int,strm_id int, nirf_rank int,foreign key(strm_id) references stream(strm_id),foreign key(clg_id) references college(clg_id));
