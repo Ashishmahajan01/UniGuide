@@ -1,3 +1,9 @@
+drop database  if exists uniguide;
+
+create database uniguide;
+use uniguide 
+
+
 #user_login
 create table user_login( user_id int primary key , user_name varchar(255),email_id varchar(255),password varchar(255),role varchar(20));
 
@@ -8,7 +14,7 @@ insert into user_login values(1004,"ruturaj04","ruturaj04@gmail.com","1234","col
 insert into user_login values(1005,"sujit05","sujit05@gmail.com","1234","student");
 
 #student stud
-create table student_login(stud_id int primary key, user_id int , stud_first_name varchar(255), stud_last_name varchar(255), stud_city varchar(255),stud_state varchar(255), stud_qualification varchar(255), stud_entrance_exam varchar(255),stud_exam_score float,foreign key(user_id) references user_login(user_id));
+create table student_login(stud_id int primary key, user_id int , stud_first_name varchar(255), stud_last_name varchar(255), stud_city varchar(255),stud_state varchar(255), stud_qualification varchar(255), stud_entrance_exam varchar(255),stud_exam_score float,clg_id int ,foreign key(user_id) references user_login(user_id),foreign key(clg_id) references college );
 
 insert into student_login values(1,1001,"Ashish","Mahajan","Pune", "Maharashtra","12th","CET",100);
 
@@ -126,7 +132,7 @@ insert into stream values(9,"LLB","After earning a degree in corporate law, stud
 
 
 #branch brch 
-create table branch(brch_id int primary key,brch_name varchar(255),strm_id int , brch_duration varchar(255),foreign key(strm_id) references stream(strm_id));
+create table branch(brch_id int primary key,brch_name varchar(255), brch_duration varchar(255));
 
 insert into branch values(1,"Mechanical Engineering", 4,"4 years");
 
@@ -246,3 +252,11 @@ insert into app_feedback values(2,1002,DATE_ADD(now(), INTERVAL 7 DAY),"very use
 insert into app_feedback values(3,1003,DATE_ADD(now(), INTERVAL 10 DAY)," really helpful",5);
 insert into app_feedback values(4,1004,DATE_ADD(now(), INTERVAL 3 DAY),"application is seemless",5);
 insert into app_feedback values(5,1005,DATE_ADD(now(), INTERVAL 5 DAY),"application is easy to use",3);
+
+
+#Community
+
+create table student_community(comm_id int, stud_id int, comm_ask longtext, comm_ask_type varchar(50),comm_ask_date datetime, foreign key(stud_id) references student_login(stud_id));
+
+insert into student_community values(1,1,"What are the assosciations for mechanical engineering","question",  now());
+insert into student_community values(2,2,"Society for Automotive Engineers,ISHRAE","Answer",date_add(now(),INTERVAL 2 day));
