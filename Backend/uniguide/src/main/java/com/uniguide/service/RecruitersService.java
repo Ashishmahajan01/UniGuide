@@ -10,4 +10,8 @@ public interface RecruitersService {
 
 	List<Recruiters> getDrives();
 
+	boolean update(Recruiters b);
+
+	boolean delete(int id);
+
 }
