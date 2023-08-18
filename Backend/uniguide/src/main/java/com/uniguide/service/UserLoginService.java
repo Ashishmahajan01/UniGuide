@@ -9,6 +9,10 @@ public interface UserLoginService {
 
 	UserLogin validate(UserLogin u);
 
+	boolean update(UserLogin ul);
+
+	boolean delete(int id);
+
 	
 
 }

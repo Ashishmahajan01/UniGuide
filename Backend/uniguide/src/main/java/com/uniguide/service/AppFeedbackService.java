@@ -10,6 +10,10 @@ public interface AppFeedbackService {
 
 	List<AppFeedback> getfeedback();
 
+	boolean update(AppFeedback fb);
+
+	boolean delete(int id);
+
 
 
 }

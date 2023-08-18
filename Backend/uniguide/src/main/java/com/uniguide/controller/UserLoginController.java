@@ -4,10 +4,15 @@ package com.uniguide.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.uniguide.beans.University;
 import com.uniguide.beans.UserLogin;
 import com.uniguide.service.UserLoginService;
 
@@ -16,6 +21,7 @@ import antlr.collections.List;
 
 
 @RestController
+@CrossOrigin
 public class UserLoginController {
 	
 	@Autowired
@@ -45,6 +51,26 @@ public class UserLoginController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		
 	}
+	
+	@PutMapping("/")
+	public ResponseEntity<String> updateUniversity(@RequestBody UserLogin ul){
+		boolean status=userloginservice.update(ul);
+		if(status)
+			return ResponseEntity.ok("user updated successfully");
+		
+		return ResponseEntity.ok("User not found");
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<String> deleteUser(@PathVariable int id){
+		boolean status=userloginservice.delete(id);
+		if(status)
+			return ResponseEntity.ok("user deleted succesfully");
+		return ResponseEntity.ok("user deleted unsuccesfully");
+		
+	}
+	
+	
 	
 	
 	
