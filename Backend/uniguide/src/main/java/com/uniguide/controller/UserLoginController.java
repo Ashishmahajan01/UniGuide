@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,7 +17,7 @@ import com.uniguide.beans.University;
 import com.uniguide.beans.UserLogin;
 import com.uniguide.service.UserLoginService;
 
-import antlr.collections.List;
+import java.util.List;
 
 
 
@@ -52,8 +53,17 @@ public class UserLoginController {
 		
 	}
 	
+	@GetMapping("/")
+	public ResponseEntity<List<UserLogin>> getAll(){
+		System.out.println("inside getAll");
+		List<UserLogin>ulist=userloginservice.getAll();
+		if(ulist.isEmpty())
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		return ResponseEntity.ok(ulist);
+	}
+	
 	@PutMapping("/")
-	public ResponseEntity<String> updateUniversity(@RequestBody UserLogin ul){
+	public ResponseEntity<String> updateUser(@RequestBody UserLogin ul){
 		boolean status=userloginservice.update(ul);
 		if(status)
 			return ResponseEntity.ok("user updated successfully");

@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.uniguide.beans.College;
 import com.uniguide.beans.Event;
 import com.uniguide.beans.UserLogin;
 import com.uniguide.service.EventService;
@@ -37,6 +38,13 @@ public class EventController {
 		return elist;
 	}
 	
+	@PostMapping("/")
+	public ResponseEntity<String> addEvent(@RequestBody Event e){
+		boolean status=eventservice.addEvent(e);
+		if(status)
+			return ResponseEntity.ok("Event added successfully");
+		return ResponseEntity.ok("Event not added");
+	}
 	
 	@PutMapping("/")
 	public ResponseEntity<String> updateEvent(@RequestBody Event e){

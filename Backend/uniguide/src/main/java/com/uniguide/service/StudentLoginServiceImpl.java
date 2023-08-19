@@ -1,11 +1,13 @@
 package com.uniguide.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uniguide.beans.StudentLogin;
+import com.uniguide.beans.University;
 import com.uniguide.beans.UserLogin;
 import com.uniguide.dao.StudentLoginDao;
 
@@ -46,6 +48,15 @@ public class StudentLoginServiceImpl implements StudentLoginService{
 		return true;
 	}
 		return false;
+	}
+
+	@Override
+	public List<StudentLogin> getAll() {
+		List<StudentLogin> ulist=studentlogindao.findAll();
+		if(ulist.isEmpty()) {
+			return null;
+		}
+		return ulist;
 	}
 	
 	

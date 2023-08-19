@@ -25,7 +25,7 @@ public class IntakeVacancy {
 	@JoinColumn(name = "brchId")
 	private Branch brchId;
 	private int invcSeats;
-	private float invcFees;
+	private double invcFees;
 	@Column(length=Integer.MAX_VALUE)
 	private String invcDocuments;
 	private int invcVacancy;
@@ -39,7 +39,7 @@ public class IntakeVacancy {
 		this.invcId = invcId;
 	}
 
-	public IntakeVacancy(int invcId, College clgId, Stream strmId, Branch brchId, int invcSeats, float invcFees,
+	public IntakeVacancy(int invcId, College clgId, Stream strmId, Branch brchId, int invcSeats, double invcFees,
 			String invcDocuments, int invcVacancy) {
 		super();
 		this.invcId = invcId;
@@ -92,11 +92,11 @@ public class IntakeVacancy {
 		this.invcSeats = invcSeats;
 	}
 
-	public float getInvcFees() {
+	public double getInvcFees() {
 		return invcFees;
 	}
 
-	public void setInvcFees(float invcFees) {
+	public void setInvcFees(double invcFees) {
 		this.invcFees = invcFees;
 	}
 

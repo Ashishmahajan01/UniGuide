@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uniguide.beans.Event;
+import com.uniguide.beans.University;
 import com.uniguide.beans.UserLogin;
 import com.uniguide.dao.EventDao;
 
@@ -47,6 +48,14 @@ public class EventServiceImpl implements EventService{
 			eventdao.delete(e);
 		return true;
 	}
+		return false;
+	}
+
+	@Override
+	public boolean addEvent(Event e) {
+		Event evt=eventdao.save(e);
+		if(evt!=null)
+		return true;
 		return false;
 	}
 	}

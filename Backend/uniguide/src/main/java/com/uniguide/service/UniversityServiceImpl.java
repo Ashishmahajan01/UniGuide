@@ -14,6 +14,7 @@ public class UniversityServiceImpl implements UniversityService {
 	@Autowired
 	private UniversityDao universityDao;
 
+	@Override
 	public List<University> getAll() {
 		List<University> ulist=universityDao.findAll();
 		if(ulist.isEmpty()) {
@@ -59,5 +60,8 @@ public class UniversityServiceImpl implements UniversityService {
 	}
 		return false;
 	}
+
+	
+	
 	
 }

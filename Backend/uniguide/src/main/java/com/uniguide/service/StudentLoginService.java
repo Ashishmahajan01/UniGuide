@@ -1,5 +1,7 @@
 package com.uniguide.service;
 
+import java.util.List;
+
 import com.uniguide.beans.StudentLogin;
 
 public interface StudentLoginService {
@@ -10,6 +12,8 @@ public interface StudentLoginService {
 	boolean update(StudentLogin sl);
 
 	boolean delete(int id);
+
+	List<StudentLogin> getAll();
 	
 
 }

@@ -34,7 +34,7 @@ public class BranchServiceImpl implements BranchService {
 		Optional<Branch> br = branchDao.findById(b.getBrchId());
 		if (br.isPresent()) {
 			Branch brc = br.get();
-			brc.setBrchDuration(b.getBrchName());
+			brc.setBrchName(b.getBrchName());
 			brc.setBrchDuration(b.getBrchDuration());
 			branchDao.save(brc);
 			return true;

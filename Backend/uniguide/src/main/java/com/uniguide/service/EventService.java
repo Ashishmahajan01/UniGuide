@@ -12,4 +12,6 @@ public interface EventService {
 
 	boolean delete(int id);
 
+	boolean addEvent(Event e);
+
 }
