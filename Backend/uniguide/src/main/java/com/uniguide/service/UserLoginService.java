@@ -1,5 +1,7 @@
 package com.uniguide.service;
 
+import java.util.List;
+
 import com.uniguide.beans.UserLogin;
 import com.uniguide.controller.UserLoginController;
 
@@ -12,6 +14,8 @@ public interface UserLoginService {
 	boolean update(UserLogin ul);
 
 	boolean delete(int id);
+
+	List<UserLogin> getAll();
 
 	
 

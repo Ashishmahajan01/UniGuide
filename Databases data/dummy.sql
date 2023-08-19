@@ -39,10 +39,7 @@ insert into university values(2,"Mumbai university",96,"Mahatma Gandhi road, man
 
 #college  clg
 create table college(clg_id int primary key ,uni_id int ,clg_name varchar(255),clg_address longtext,clg_city varchar(255),clg_state varchar(255),clg_website varchar(255),clg_description longtext,clg_img longtext, foreign key(uni_id) references university(uni_id));
-insert into college values(1,1,"Rajarshi Shahu College of Engineering","Ashok Nagar, Tathawade","Pune","Maharashtra","www.jspmrscoe.edu.in","Rajarshi Shahu College of Engineering is one among the hallmark institutes of pune, 
-established in 2001 with the aim of providing quality technical education and excellence in the ever expanding horizon of technical revolution of 21st century. 
-The institute is becoming an icon in the field of engineering education in the state of Maharashtra. It is nurtured and managed by Jayawant Shikshan Prasarak Manadal Trust. 
-The Institute is approved by the All India Council for Technical Education (AICTE), New Delhi and Govt. of Maharashtra affiliated to Savitribai Phule Pune University.",null);
+insert into college values(1,"Ashok Nagar, Tathawade","Pune","Rajarshi Shahu College of Engineering is one among the hallmark institutes of pune,established in 2001 with the aim of providing quality technical education and excellence in the ever expanding horizon of technical revolution of 21st century.",null,"Rajarshi Shahu College of Engineering","Maharashtra","www.jspmrscoe.edu.in",1);
 
 
 
@@ -134,32 +131,32 @@ insert into stream values(9,"LLB","After earning a degree in corporate law, stud
 #branch brch 
 create table branch(brch_id int primary key,brch_name varchar(255), brch_duration varchar(255));
 
-insert into branch values(1,"Mechanical Engineering","4 years");
+insert into branch values(1,"4 years","Mechanical Engineering");
 
-insert into branch values(2,"Computer Engineering","4 years");
+insert into branch values(2,"4 years","Computer Engineering");
 
-insert into branch values(3,"Civil Engineering","4 years");
+insert into branch values(3,"4 years","Civil Engineering");
 
-insert into branch values(4,"Computer Science","3 years");
+insert into branch values(4,"3 years","Computer Science");
 
-insert into branch values(5,"Physics","3 years");
+insert into branch values(5,"3 years","Physics");
 
-insert into branch values(6,"Mathematics","3 years");
+insert into branch values(6,"3 years","Mathematics");
 
-insert into branch values(7,"Urban Planning","3-4 years");
+insert into branch values(7,"3-4 years","Urban Planning");
 
-insert into branch values(8,"Interior","4 years");
+insert into branch values(8,"4 years","Interior");
 
-insert into branch values(9,"Design","4 years");
+insert into branch values(9,"4 years","Design");
 
-insert into branch values(10,"BDS","5.5 years");
+insert into branch values(10,"5.5 years","BDS");
 
-insert into branch values(11,"BAMS","5.5 years");
+insert into branch values(11,"5.5 years","BAMS");
 
 #ranking rnk
 create table ranking(rnk_id int primary key ,clg_id int,strm_id int, nirf_rank int,foreign key(strm_id) references stream(strm_id),foreign key(clg_id) references college(clg_id));
 
-insert into ranking values(1,1,4,170);
+insert into ranking values(1,170,null,null);
 
 insert into ranking values(2,2,4,72);
 
@@ -201,7 +198,7 @@ insert into intake_vacancy values(6,9,8,11,300,155000,"10th result, 12th result,
 #College_predictor clgpr
 create table college_predictor(clgpr_id int primary key ,clg_id int ,strm_id int ,brch_id int ,clgpr_entrance_exam varchar(255),clgpr_y1 float,clgpr_y2 float,clgpr_y3 float,clgpr_y4 float,clgpr_y5 float,clgpr_average float GENERATED ALWAYS as ((clgpr_y1*0.2+clgpr_y2*0.4+clgpr_y3*0.6+clgpr_y4*0.8+clgpr_y5)/3),foreign key(clg_id) references college(clg_id),foreign key(brch_id) references branch(brch_id),foreign key(strm_id) references stream(strm_id));
 
-insert into college_predictor values(1,1,4,1,"CET",80,84.2,78.2,81.3,84.6,default);
+insert into college_predictor values(1,"CET",80,84.2,78.2,81.3,84.6,null,null,null);
 
 insert into college_predictor values(2,1,4,1,"JEE",60,62.2,68.2,60.3,64.6,default);
 

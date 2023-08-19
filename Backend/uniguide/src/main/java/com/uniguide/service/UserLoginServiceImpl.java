@@ -1,5 +1,6 @@
 package com.uniguide.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,17 @@ public class UserLoginServiceImpl implements UserLoginService{
 		return userlogindao.getByUsername(u.getEmailId(),u.getPassword());
 		
 	}
+	
+	@Override
+	public List<UserLogin> getAll() {
+		List<UserLogin> ulist=userlogindao.findAll();
+		if(ulist.isEmpty()) {
+			return null;
+		}
+		return ulist;
+	}
+	
+	
 
 	@Override
 	public boolean update(UserLogin ul) {
@@ -51,6 +63,8 @@ public class UserLoginServiceImpl implements UserLoginService{
 	}
 		return false;
 	}
+
+	
 	
 	
 
