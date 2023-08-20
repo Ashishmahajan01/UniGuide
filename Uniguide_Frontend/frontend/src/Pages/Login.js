@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import { URL } from '../config';
+import { useCookies } from 'react-cookie'
 import "../CSS/Login.css"
 
 
@@ -12,7 +13,8 @@ const Login = () => {
 const[emailId,setEmailId]=useState("");
     const [password, setPassword] = useState("");
     const [userLogin, setUserLogin] = useState("");
- const navigate = useNavigate()
+  const navigate = useNavigate()
+  const [cookies, setCookie] = useCookies("");
 
 const LoginFunction=()=>
 {
@@ -37,26 +39,31 @@ const LoginFunction=()=>
           password,
         }
         axios.post(`${URL}/login`, body).then((response) => {
-            const result = response.data
+          const result = response.data
+          const status = response.status
             console.log(result);
             const { userId, userName, emailId, password, role } = result
             console.log(userId);
-            console.log("ashish is mc", response.data);
+            console.log("ashish is god", response.data);
             //console.log(result['status'])
-            if (result['status'] == 'success') {
-                console.log("gffdgd1213");
-                toast.success('Welcome to the application')
-            
-                navigate('/home')
-            } else {
+          if (status === 200) {
+            console.log("gffdgd1213");
+            toast.success('Welcome to the application')
+             setCookie('token', result, { path: '/'})
+            navigate('/feedback')
+          }
+            //  else {
           
-                console.log("gffdgd");
-                navigate('/home')
-                console.log("error");
-            }
+            //     console.log("gffdgd");
+            //     navigate('/feedback')
+            //     console.log("error errrr");
+            // }
           
         })
-            //.catch(); { console.log("event fired") }
+        .catch(); {
+          console.log("event fired")
+          navigate('/home')
+      }
         
       }
      
