@@ -24,13 +24,10 @@ insert into student_login values(2,1005,"Sujit","Pawar","Pune", "Maharashtra","1
 
 create table university(uni_id int primary key ,uni_name varchar(255),uni_rank int,uni_address longtext,uni_city varchar(255),uni_state varchar(255),uni_description longtext,uni_img longtext);
 
-insert into university values(1,"Savitribai phule Pune university",35,"Shivaji Nagar","Pune","Maharashtra","It is popularly known as the 'Oxford 
-of the East'. It has about 307 recognized research institutes and 612 affiliated 
-colleges offering graduate and under-graduate courses. 
-The university attracts many foreign students due to its excellent 
-facilities. It offers good accommodation facility.",null);
+insert into university values(1,"Shivaji Nagar","Pune","It is popularly known as the 'Oxford",null,"Savitribai phule Pune university",35,"Maharashtra"); 
 
-insert into university values(2,"Mumbai university",96,"Mahatma Gandhi road, mantralaya","Mumbai","Maharashtra","The University of Mumbai is a public state
+
+insert into university values(2,"Mahatma Gandhi road, mantralaya","Mumbai","Maharashtra","Mumbai university",96,"The University of Mumbai is a public state
  university in Mumbai. It is one of the largest university systems in the world with over 
  549,000 students on its campuses and affiliated colleges. As of 2013, the university 
  had 711 affiliated colleges. Ratan Tata is the appointed head of the advisory council.",null);
