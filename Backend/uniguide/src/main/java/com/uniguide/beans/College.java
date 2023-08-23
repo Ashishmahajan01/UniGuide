@@ -1,5 +1,6 @@
 package com.uniguide.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ public class College {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int clgId;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name="uniId")
 	private University uniId;
 	private String clgName;

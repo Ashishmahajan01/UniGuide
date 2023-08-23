@@ -1,6 +1,7 @@
 package com.uniguide.beans;
 
 import javax.annotation.Generated;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,13 +16,13 @@ public class CollegePredictor {
 
 	@Id
 	private int clgprId;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "clgId")
 	private College clgId;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "strmId")
 	private Stream strmId;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "brchId")
 	private Branch brchId;
 	private String clgprEntranceExam;

@@ -1,5 +1,6 @@
 package com.uniguide.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,8 @@ public class UserLogin {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
 	private String userName;
+	
+	@Column(unique = true) 
 	private String emailId;
 	private String password;
 	private String role;

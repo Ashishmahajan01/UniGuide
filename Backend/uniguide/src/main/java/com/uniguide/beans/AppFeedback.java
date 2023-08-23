@@ -2,6 +2,7 @@ package com.uniguide.beans;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ public class AppFeedback {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int appfeedId;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name="userId")
 	private UserLogin userId;
 	private Date appfeedDate;
