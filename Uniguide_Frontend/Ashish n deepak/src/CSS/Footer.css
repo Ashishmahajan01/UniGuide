@@ -1,0 +1,46 @@
+.footer {
+    background-color: #0ab2be; 
+    padding: 1rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo h2 {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.5rem;
+    margin: 0;
+    align-self: auto ;
+  }
+  
+  .footer-logo p {
+      display: flex;
+        justify-content: flex-end;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .footer-social a {
+    color: white;
+    margin-right: 1rem;
+    font-size: 2.2rem;
+    transition: color 0.3s;
+  }
+  
+  .footer-social a:hover {
+    color: #ddd; /* Change the color on hover */
+  }
+  
+  .footer-bottom {
+    margin-top: 1rem;
+  }
+
+  
