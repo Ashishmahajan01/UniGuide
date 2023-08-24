@@ -1,0 +1,63 @@
+
+
+
+/* Container styling */
+.college-predictor-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    align-self: center;
+    padding: 20px;
+    padding-top: 50px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+  
+  }
+  
+  /* Input styling */
+  .college-predictor-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .college-predictor-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  /* College list styling */
+  .college-predictor-heading {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .college-predictor-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .college-predictor-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Message styling */
+  .college-predictor-message {
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .college-predictor-container {
+      max-width: 90%;
+    }
+  }
+  

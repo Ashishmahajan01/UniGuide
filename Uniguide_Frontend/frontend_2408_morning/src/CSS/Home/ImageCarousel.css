@@ -1,0 +1,57 @@
+/* Add this to your custom CSS file */
+.image-carousel-container {
+    width: 30%;
+    max-width: 800px; /* Adjust this value as needed for your design */
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .image-carousel {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .image-carousel img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .image-carousel img::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.8rem; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a shadow effect */
+    background-color: rgba(0, 0, 0, 0.5); /* Add a transparent background */
+    padding: 8px 16px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  /* Additional styling for the carousel arrows */
+  .carousel .control-prev.control-arrow:before,
+  .carousel .control-next.control-arrow:before {
+    color: #333;
+    font-size: 2rem;
+  }
+  
+  .carousel .control-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+  }
+  
+  .carousel .control-dots .dot {
+    background: #bbb;
+  }
+  
+  .carousel .control-dots .dot.selected {
+    background: #333;
+  }
+  
