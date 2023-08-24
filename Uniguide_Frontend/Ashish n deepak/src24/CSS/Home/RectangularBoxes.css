@@ -1,0 +1,31 @@
+.rectangular-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.box {
+  background-color: #a1ecf5;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: 1;
+  margin-right: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(240, 117, 3, 0.2);
+}
+
+.box h2 {
+  margin: 0;
+}
+
+.box p {
+  margin: 0;
+  margin-top: 0.5rem;
+  color: #1a110d;
+}
+

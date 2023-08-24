@@ -1,0 +1,32 @@
+.branch-page {
+    text-align: center;
+    padding: 20px;
+}
+
+.college-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.branch-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+.branch-table th,
+.branch-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.branch-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.branch-table td {
+    text-align: center;
+}

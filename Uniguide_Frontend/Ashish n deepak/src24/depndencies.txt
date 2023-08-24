@@ -1,0 +1,16 @@
+for fonts
+
+npm i @fortawesome/free-brands-svg-icons
+npm install --save @fortawesome/react-fontawesome @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/fontawesome-free 
+npm install react-router-dom  
+npm install react-responsive-carousel 
+npm i react-hook-form  
+npm i react-toastify  
+npm i react-dropzone  
+ npm install bootstrap@5.3.1  
+npm install --save axios     
+npm i react-cookie  
+npm install react-scripts --save  
+ npm i cors       
+npm i mdb-react-ui-kit
