@@ -1,0 +1,43 @@
+/* Add this to your custom CSS file */
+.footer {
+    background-color: #0ab2be; /* Change to the desired color */
+    padding: 1rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .footer-logo p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .footer-social a {
+    color: white;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .footer-social a:hover {
+    color: #ddd; /* Change the color on hover */
+  }
+  
+  .footer-bottom {
+    margin-top: 1rem;
+  }
+  
+  /* ... (other styles) */
+  

@@ -1,0 +1,133 @@
+.app-box {
+    margin:auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width:100%;
+    align-self: center;
+    padding-top: 50px;
+    margin-top: 20px;
+    /* Adjust the width as needed */
+}
+
+.app-star-rating {
+    font-size: 50px;
+    color: #ccc;
+}
+
+.app-star {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.app-feedback-form {
+    margin:"10px";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 400px;
+ 
+}
+
+.app-form-group {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+select,
+textarea {
+    width: 100%;
+}
+
+.app-star-rating {
+    font-size: 50px;
+}
+
+.app-star {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.app-star.filled {
+    color: gold;
+}
+
+
+.app-feed-form {
+    text-align: left;
+}
+
+.app-feed-heading1 {
+    font-family: 'Helvetica Neue', sans-serif;
+    
+    font-size: 24px;
+    
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.app-buttons {
+    display: flex;
+    justify-content: center;
+    /* Center the buttons */
+    align-items: center;
+    flex-direction: column;
+    /* Align vertically */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    /* Add some margin */
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.app-new-user {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.app-heading1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.app-margin {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem; /* Add margin to create space after testimonials */
+  }
+
+  /*Input Error*/
+  .error:focus{
+    border: 2px solid red !important;
+    /* outline: red; */
+  }
