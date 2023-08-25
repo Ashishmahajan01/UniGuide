@@ -2,7 +2,6 @@ package com.uniguide.beans;
 
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +14,7 @@ public class Community {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int commId;
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name="studId")
 	private StudentLogin studId;
 	@Column(length=Integer.MAX_VALUE)

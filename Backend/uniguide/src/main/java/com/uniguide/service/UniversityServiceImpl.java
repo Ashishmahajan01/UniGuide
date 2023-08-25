@@ -1,18 +1,29 @@
 package com.uniguide.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uniguide.beans.University;
+import com.uniguide.dao.BranchDao;
+import com.uniguide.dao.CollegeDao;
+import com.uniguide.dao.StreamDao;
 import com.uniguide.dao.UniversityDao;
 
 @Service
 public class UniversityServiceImpl implements UniversityService {
 	@Autowired
 	private UniversityDao universityDao;
+	@Autowired
+	private CollegeDao collegeDao;
+	@Autowired
+	private StreamDao streamDao;
+	@Autowired
+	private BranchDao branchDao;
 
 	@Override
 	public List<University> getAll() {
@@ -59,6 +70,20 @@ public class UniversityServiceImpl implements UniversityService {
 		return true;
 	}
 		return false;
+	}
+
+	@Override
+	public Map<String, Integer> getUniversityCount() {
+		int unicount=(int) universityDao.count();
+		int collegecount=(int) collegeDao.count();
+		int streamcount=(int) streamDao.count();
+		int branchcount=(int) branchDao.count();
+		Map<String,Integer> cmap=new HashMap<>();
+		cmap.put("Unicount",unicount);
+		cmap.put("Collegecount",collegecount);
+		cmap.put("Streamcount",streamcount);
+		cmap.put("Branchcount",branchcount);
+		return cmap;
 	}
 
 	

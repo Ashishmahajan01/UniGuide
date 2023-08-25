@@ -1,6 +1,5 @@
 package com.uniguide.beans;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,10 +14,10 @@ public class Ranking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int rnkId;
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "clgId")
 	private College clgId;
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "strmId")
 	private Stream strmId;
 	private int nirfRank;

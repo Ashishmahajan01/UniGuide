@@ -61,6 +61,17 @@ public class CollegePredictorController {
 		return ResponseEntity.ok("College mark details cannot be deleted");
 	}
 	
+	@GetMapping("/exams")
+	public ResponseEntity<List<String>> getExams(){
+		List<String> elist=collegePredictorService.getExams();
+		return ResponseEntity.ok(elist);
+	}
 	
+	@GetMapping("/exams/{exam}")
+	public ResponseEntity<List<CollegePredictor>> getColleges(@PathVariable String exam){
+		System.out.println(exam);
+		List<CollegePredictor> clist=collegePredictorService.getColleges(exam);
+		return ResponseEntity.ok(clist);
+	}
 
 }

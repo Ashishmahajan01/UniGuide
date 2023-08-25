@@ -1,6 +1,7 @@
 package com.uniguide.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.websocket.server.PathParam;
 
@@ -58,8 +59,13 @@ public class UniversityController {
 		boolean status=universityService.delete(id);
 		if(status)
 			return ResponseEntity.ok("University deleted succesfully");
-		return ResponseEntity.ok("University deleted unsuccesfully");
-		
+		return ResponseEntity.ok("University deleted unsuccesfully");	
+	}
+	
+	@GetMapping("/getcount")
+	public ResponseEntity<Map<String,Integer>> getCountUniversity(){
+		Map<String,Integer> cmap=universityService.getUniversityCount();
+		return ResponseEntity.ok(cmap);
 	}
 	
 	

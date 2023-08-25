@@ -58,6 +58,20 @@ public class CollegePredictorServiceImpl implements CollegePredictorService{
 		}
 		return false;
 	}
+
+	@Override
+	public List<String> getExams() {
+		return  collegePredictorDao.getExams();
+		
+	}
+
+
+	@Override
+	public List<CollegePredictor> getColleges(String exam) {
+		List<CollegePredictor> clist=collegePredictorDao.getColleges(exam);
+		System.out.println(clist);
+		return clist;
+	}
 	
 
 }

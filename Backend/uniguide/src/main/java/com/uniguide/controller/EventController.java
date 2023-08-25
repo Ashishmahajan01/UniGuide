@@ -64,6 +64,12 @@ public class EventController {
 		
 	}
 	
+	@GetMapping("/recent")
+	public List<Event> getRecentEvent()
+	{
+		List<Event> elist= eventservice.getRecentEvents();
+		return elist;
+	}
 	
 
 }

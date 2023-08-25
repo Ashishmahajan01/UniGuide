@@ -3,6 +3,7 @@ package com.uniguide.service;
 import java.util.List;
 
 import com.uniguide.beans.AppFeedback;
+import com.uniguide.beans.Event;
 
 public interface AppFeedbackService {
 
@@ -13,6 +14,8 @@ public interface AppFeedbackService {
 	boolean update(AppFeedback fb);
 
 	boolean delete(int id);
+
+	List<AppFeedback> getRecentFeedbacks();
 
 
 

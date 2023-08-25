@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.uniguide.beans.AppFeedback;
+import com.uniguide.beans.Event;
 import com.uniguide.beans.University;
 import com.uniguide.beans.UserLogin;
 import com.uniguide.service.AppFeedbackService;
@@ -30,12 +31,15 @@ public class AppFeedbackController {
 	
 	@PostMapping("/")
 	public ResponseEntity<?> giveFeedback( @RequestBody AppFeedback fb) {
+		System.out.println("inside the controller");
+		System.out.println("feedback"+fb);
 		appfeedback.giveFeedback(fb);
-		  return ResponseEntity.ok(" feedback added successfully");
+		  return ResponseEntity.ok("feedback added successfully");
 	}
 	
 	@GetMapping("/")
 	public List<AppFeedback> getFeedbackData() {
+		System.out.println(appfeedback.getfeedback());
 		return appfeedback.getfeedback();
 		  
 	}
@@ -55,6 +59,13 @@ public class AppFeedbackController {
 		if(status)
 			return ResponseEntity.ok("feedback deleted succesfully");
 		return ResponseEntity.ok("feedback deleted unsuccesfully");
-		
 	}
+	
+	@GetMapping("/recent")
+	public List<AppFeedback> getRecentFeedback()
+	{
+		List<AppFeedback> feedlist= appfeedback.getRecentFeedbacks();
+		return feedlist;
+	}
+	
 }

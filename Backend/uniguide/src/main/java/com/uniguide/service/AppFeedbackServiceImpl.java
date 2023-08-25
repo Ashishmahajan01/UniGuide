@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.uniguide.beans.AppFeedback;
+import com.uniguide.beans.Event;
 import com.uniguide.beans.UserLogin;
 import com.uniguide.dao.AppFeedbackDao;
 
@@ -28,7 +29,7 @@ public class AppFeedbackServiceImpl  implements AppFeedbackService{
 		
 		@Override
 		public List<AppFeedback> getfeedback() {
-			return appfeedbackdao.findAll();
+			return appfeedbackdao.getSorted();
 		}
 
 
@@ -55,6 +56,12 @@ public class AppFeedbackServiceImpl  implements AppFeedbackService{
 			return true;
 		}
 			return false;
+		}
+
+
+		@Override
+		public List<AppFeedback> getRecentFeedbacks() {
+			return appfeedbackdao.getRecent();
 		}
 		
 		

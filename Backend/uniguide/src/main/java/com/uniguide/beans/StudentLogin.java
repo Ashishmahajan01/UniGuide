@@ -13,7 +13,7 @@ public class StudentLogin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int studId;
-	@OneToOne(cascade = CascadeType.REMOVE)
+	@OneToOne()
 	@JoinColumn(name="userId")
 	private UserLogin userId;
 	private String studFirstName;

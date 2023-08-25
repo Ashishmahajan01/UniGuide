@@ -1,6 +1,5 @@
 package com.uniguide.beans;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -11,10 +10,10 @@ public class CollegeRanking {
 	@Id
 	private int rnkId;
 	private int nirfRank;
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "clgId")
 	private College clgId;
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "strmId")
 	private Stream strmId;
 

@@ -1,6 +1,5 @@
 package com.uniguide.beans;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,13 +15,13 @@ public class IntakeVacancy {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int invcId;
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "clgId")
 	private College clgId;
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "strmId")
 	private Stream strmId;
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "brchId")
 	private Branch brchId;
 	private int invcSeats;

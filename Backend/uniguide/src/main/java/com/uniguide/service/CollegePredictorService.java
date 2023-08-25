@@ -15,4 +15,8 @@ public interface CollegePredictorService {
 
 	boolean delete(int id);
 
+	List<String> getExams();
+
+	List<CollegePredictor> getColleges(String exam);
+
 }

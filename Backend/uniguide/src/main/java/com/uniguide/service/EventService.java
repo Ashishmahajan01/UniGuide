@@ -14,4 +14,6 @@ public interface EventService {
 
 	boolean addEvent(Event e);
 
+	List<Event> getRecentEvents();
+
 }
