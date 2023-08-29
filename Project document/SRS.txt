@@ -1,0 +1,129 @@
+SRS Document 
+
+
+Purpose :
+		The purpose of the Uniguide platform is to provide students with comprehensive information about universities, colleges, courses, 
+career paths, events, and job opportunities. 
+It aims to assist students in making informed decisions about their education and career choices.
+
+Scope:
+The Uniguide platform will include features such as university and college information, course details, college predictor,
+ inclination test, event listings, and job vacancy postings for recruiters.
+
+Description:
+		Uniguide is a web-based application that allows students to get the required information about universities, colleges, streams and branches also the scope of each 
+stream. It provides student a platform where they can get to know which college they can get depending upon their scores, also provides 
+'Inclination test' which helps them to get to know about the career fields they can excel into. It provides platform for colleges and universities
+where they can publich their information which hepls them to reach wide area of students. 
+
+
+Objectives:
+
+
+
+
+
+Functional Requirement:
+
+1)Student:  Students should be able to register on the platform using their email or social media accounts.
+			Students should be able to search and view detailed information about universities and colleges.
+			Students should see comprehensive details about courses offered, fees, admission criteria, entrance exams, and faculty.
+			Students should be able to input their academic details, test scores, and preferences to get personalized college predictions.
+			Students should be able to take an inclination test to assess their skills and interests.
+			The system should provide detailed test results and suggest suitable career paths based on the student's strengths.
+			Students should be able to browse and search for educational and career-related events.
+			Students should be able to search and view job vacancies posted by recruiters.
+			
+2)College   College Registration and Authentication
+			Colleges should be able to register on the platform using their official email or registration form.
+			A verification process should be in place to authenticate the legitimacy of the college.
+			College Profile Management
+			Once registered and verified, colleges should be able to create and manage their profile.
+			Colleges should be able to update information such as courses offered, fees, admission criteria, and contact details.
+			Colleges should be able to list and manage the courses they offer.
+			Each course listing should include details like course name, duration, eligibility, syllabus, and faculty details.
+			Colleges should have the ability to list educational and career-related events they are hosting or participating in.
+			Event listings should include event details, dates, location, and registration information.
+
+
+3)Owner
+			Owners should have access to a secure admin dashboard to manage all aspects of the platform.
+			They should be able to add, edit, and remove content such as colleges, courses, events, and job postings.
+			Owners should be able to view and manage user accounts, including students, colleges, and recruiters.
+			They should have the ability to suspend or ban users for violations or inappropriate behavior.
+			Owners should have access to comprehensive analytics and reporting tools.
+			Owners should be able to manage subscription plans for colleges and recruiters.
+
+4)HR
+			Recruiters should be able to register on the platform using their company's official email or registration form.
+			Recruiters should be able to post job vacancies on the platform.
+			Job postings should include details such as job title, description, required skills, location, and application instructions.
+			ecruiters should be able to list and participate in career fairs, workshops, and networking events.
+			They should have the option to provide event details, company information, and booth locations.
+
+
+NonFunctional Requirement:
+
+	Security:
+		Registered Customer will allowed to cancel tickets within 24 hours. The System will provide access based on roles, (Authorization) like technical and 
+developer team will be granted all permissions. System will automatically redirected to home page due to inactiveness. Sensitive information will be encrypted for 
+security purpose. Use of high quality firewall and secured connection for preventing data breach, cyber attacks etc. Technical department will be working 27*7 for 
+immediate action if attack occurs. The application should be able to detect and respond to security breaches in a timely manner.
+
+
+	Reliability:
+		The application should be able to handle high traffic volumes without crashing or slowing down. The application should have automated backup and 
+recovery mechanisms in place to ensure data is not lost in the event of a system failure. The application should be able to provide consistent performance under 
+varying conditions, such as network latency or high server load.
+
+	Availability:
+		The application should be accessible to users 24/7. The application should have a disaster recovery plan in place to ensure the system can be restored 
+in the event of an outage. The application should have mechanisms in place to minimize downtime during maintenance or upgrades.
+
+	Maintainability:
+		The application should have well-structured and modular code that is easy to maintain and update. The application should have automated testing and 
+debugging mechanisms to help identify and fix issues quickly. The application should have version control in place to manage changes to the codebase.
+
+	Portability:
+	The application should be designed to run on multiple platforms and devices, including desktops, laptops, tablets, and smartphones. The application should be 
+compatible with different operating systems, web browsers, and screen sizes.
+
+	Accessibility:
+		The application should be accessible to users with disabilities, such as those who are visually impaired or have limited mobility. The application 
+should have features in place to support assistive technologies, such as screen readers or keyboard-only navigation.
+	Durability:
+		The application should be designed to withstand long-term use and data storage. The application should have mechanisms in place to ensure data 
+integrity and prevent data corruption. The ticket will be in cart for 10 minutes only(so that other customers may not suffer any problem based on ticket selection). 
+System will implementing backup periodically ,(if any technical glitch or data get corrupted then data is not lost)
+
+	Efficiency:
+		The application should be optimized for speed and performance. The application should be able to handle high volumes of transactions without slowing 
+down or timing out. The application should have caching mechanisms in place to reduce server load and improve response times.
+
+	Modularity:
+		The application should be designed as a set of modular components that can be easily maintained and updated. The application should have well-defined 
+interfaces and dependencies between modules. The application should be able to scale individual modules as needed.
+
+	Scalability:
+	The application should be able to handle increasing traffic volumes as the user base grows. The application should be able to scale horizontally or vertically, 
+depending on the needs of the system. The application should have load-balancing mechanisms in place to distribute traffic across multiple servers.
+
+	Safety:
+		The application should be designed to prevent harm to users or others. The application should have safety features in place to prevent misuse or abuse 
+of the system.
+
+	Analysis:
+		The application should be able to collect and analyze data on user behavior, system performance, and other metrics. The application should have 
+reporting mechanisms in place to provide insights and feedback to stakeholders.
+
+	Performance:
+		The system should be able to handle a large number of users without any performance issues. The system should be able to process ticket bookings and 
+financial transactions quickly.
+		
+	Constraints
+		Budget- The development and maintenance costs of the system should be within the budget allocated by the company.
+		Time- The system should be developed and deployed within six months.
+
+
+Conclusion:
+		
