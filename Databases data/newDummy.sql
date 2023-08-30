@@ -110,7 +110,7 @@ insert into app_feedback values(5,DATE_ADD(now(), INTERVAL 5 DAY),"application i
 
 
 
-
+#branch
 
 insert into branch values(1,"4 years","Mechanical Engineering");
 insert into branch values(2,"4 years","Computer Engineering");
@@ -127,10 +127,92 @@ insert into branch values(11,"5.5 years","BAMS");
 
 
 
+#recruiters recu
+#create table recruiters(recu_id int primary key,recu_name varchar(255),recu_job_profile varchar(255),recu_job_desc longtext,recu_reg_date DATE,recu_end_date DATE,recu_link varchar(255));
+
+insert into recruiters values(default,DATE_ADD(now(), INTERVAL 7 DAY),"minimun 1 year experience in mysql,sprintboot,react","ASE","https://www.freshersnow.com/opentext-recruitment/","Opentext",now());
+insert into recruiters values(default,DATE_ADD(now(), INTERVAL 7 DAY),"skills in mongodb,any programming language ,communication skill","Analyst","https://www.freshersnow.com/cognizant-recruitment/","cognizant",now());
+insert into recruiters values(default ,DATE_ADD(now(), INTERVAL 7 DAY),"experties in Aws , cloud computing,J2EE","Adavace ASE","https://www.freshersnow.com/accenture-off-campus/","Accenture",now());
+insert into recruiters values( default,DATE_ADD(now(), INTERVAL 7 DAY),"skills in angular js,react,javascript","Adavace ASE","https://www.freshersnow.com/tcs-off-campus/","TCS",now());
+
+insert into recruiters values( default,DATE_ADD(now(), INTERVAL 7 DAY),"experiance 2-3 years in operational and supply chain management","Adviser","https://www.freshersnow.com/wipro-recruitment/","wipro",now());
 
 
 
 
+#student stud
+#create table student_login(stud_id int primary key, user_id int , stud_first_name varchar(255), stud_last_name varchar(255), stud_city varchar(255),stud_state varchar(255), stud_qualification varchar(255), stud_entrance_exam varchar(255),stud_exam_score float,clg_id int ,foreign key(user_id) references user_login(user_id),foreign key(clg_id) references college (clg_Id) );
+
+insert into student_login(stud_id,stud_city,stud_entrance_exam,stud_exam_score,stud_first_name,stud_last_name,stud_qualification,stud_state,user_id,clg_Id) values(1,"Jalgaon","CET",90 ,"Ashish","Mahajan","12th","Maharashtra",2,7);
+insert into student_login(stud_id,stud_city,stud_entrance_exam,stud_exam_score,stud_first_name,stud_last_name,stud_qualification,stud_state,user_id,clg_Id) values(3,"Pune","JEE", 300,"Gaurav","Aher","12th","Maharashtra",1,1);
+
+
+insert into student_login values(1,"Jalgaon","CET",90 ,"Ashish","Mahajan","12th","Maharashtra",1,1);
+insert into student_login values(2,"Kolhapur","CET",80 ,"Ruturaj","Hodage","12th","Maharashtra",2,2);
+insert into student_login values(3,"Pune","JEE", 300,"Gaurav","Aaher","12th","Maharashtra",3,3);
+insert into student_login values(4,"Pune","NEET",500 ,"Deepak","Shinde","12th","Maharashtra",4,4);
+insert into student_login values(5,"satara","CET",74 ,"Sakshi","Satarkar","12th","Maharashtra",5,5);
+
+
+
+#stream strm
+create table stream(strm_id int primary key ,strm_name varchar(255),strm_scope longtext);
+
+insert into stream values(1,"BBA","The esteemed job profoles that are offered are Human Resource manager, Finance Manager, Business consultant, Marketing manager. Some graduates can get placed in Financial Institutes, Marketing Organisations, Business Consultancies, and educational institutes with high packages.");
+
+insert into stream values(2,"BEM","Event management is a thriving industry in India with immense career opportunities. Whether you are interested in planning weddings, corporate events or music concerts, the scope of work is vast and exciting. Can get roles like Resort general manager,Sales director
+Meeting planner,Event marketing manager,Wedding planner,Tourism manager");
+
+insert into stream values(3,"BFD","On completion of BFD, students can opt for a wide range of jobs including Costume Designer, Stylist, Trend Forecaster, Fashion Designer, Product Developer among numerous others. This course allows the students to work in the glamorous world of the fashion industry, providing the average salary package of INR 2-9 lakh");
+
+insert into stream values(4,"BTech","In the future, the B. Tech CSE students will be at the top of the job market with their highly sought-after skills and knowledge. Hence, students can depend on the graduates to become successful in the long run");
+
+insert into stream values(5,"BArch","BArch is a course that comes with a lot of opportunities. Some of the top job profiles that consist of the BArch graduates are Design Architect, Project Assistant, Project Architect, Interior Designer, Urban Planner, etc");
+
+insert into stream values(6,"BCA","A BCA graduate has a great scope in jobs as a Web Designer, System Manager, Software Developer, Computer Programmer, Web Developer, Software Developer, software tester, etc. depending on the skills acquired by the student at the time of BCA.");
+
+insert into stream values(7,"BSc","Some popular job roles include physics professor, physicist, research scientist, biophysicist, natural science expert, research faculty, subject-matter expert and nanotechnologist. These jobs are sought after and well paid");
+
+insert into stream values(8,"MBBS","MBBS candidates can also pursue careers in other sectors besides hospitals. Some of the industries which are flourishing nowadays are mentioned below. Government Sector: There are endless government jobs for MBBS graduates be it teaching or defence.");
+
+insert into stream values(9,"LLB","After earning a degree in corporate law, students can find work in law firms, banks, insurers, asset managers, and other organisations. If they choose to teach, they can become or be hired as a Teacher or Lecturer at colleges or universities after earning a master's degree in business law");
+
+
+
+
+
+
+
+
+#User_login 
+
+insert into user_login values(default,"gauravaher@gmail.com","1234","student","Gaurav");
+insert into user_login values(default,"ashishmahajan01@gmail.com","1234","student","Ashish");
+insert into user_login values(default,"ruturaj@gmail.com","1234","HR","Ruturaj");
+insert into user_login values(default,"deepak@gmail.com","1234","College","Deepak");
+insert into user_login values(default,"sujit@gmail.com","1234","College","Sujit");
+
+
+#university
+
+insert into university values (default,"Ganeshkhind Rd, Ganeshkhind, Pune, Maharashtra 411007","Pune","Savitribai Phule Pune University, formerly the University of Pune, is a public state university located in the city of Pune.The university houses 46 academic departments.",null,"Savitribai Phule Pune University",10,"Maharashtra");
+
+insert into university values (default,"Mahatma Gandhi Road, Mantralaya, Fort, Mumbai, Maharashtra 400032","Mumbai","The University of Mumbai is a public state university in Mumbai. It is one of the largest university systems in the world with over 549,000 students on its campuses and affiliated colleges.",null,"University of Mumbai",56,"Maharashtra");
+
+insert into university values (default,"Main Gate Rd, IIT Area, Powai, Mumbai, Maharashtra 400076","Mumbai"," IIT Bombay is the topmost preferred choice for Indian students in STEM fields such as computer science and engineering.",null,"Indian Institute of Technology Bombay",1,"Maharashtra");
+
+insert into university values (default,"Bharati Vidyapeeth Bhavan, Lal Bahadur Shastri Rd, Joshi Wada, Sadashiv Peth, Pune, Maharashtra 411030","Pune","Bharati Vidyapeeth is a 58 year old private deemed to be university established in Pune, India.",null,"Bharati Vidyapeeth Deemed University",76,"Maharashtra");
+
+insert into university values (default,"43GW+CR2, Hanuman Nagar, Ajni Rd, Medical Chowk, Ajni, Nagpur, Maharashtra 440003","Nagpur","Government Medical College and Hospital, Nagpur is a medical college located in Ajni which is part of South Nagpur, Maharashtra, India",null,"Govt Medical College, Nagpur",62,"Maharashtra");
+
+
+#college predictor
+
+insert into college_predictor values (default,"JEE",60,62.2,68.2,60.3,64.6,null,null,null);
+insert into college_predictor values (default,"JEE",80,84.2,78.2,81.3,84.6,null,null,null);
+insert into college_predictor values (default,"NEET",680,684,640,604,600,null,null,null);
+insert into college_predictor values (default,"12th percentage",65,64.2,62.2,61.3,68.6,null,null,null);
+insert into college_predictor values (default,"CET",,80,84.2,78.2,81.3,84.6,null,null,null);
 
 
 

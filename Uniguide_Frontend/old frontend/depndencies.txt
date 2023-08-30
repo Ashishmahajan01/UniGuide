@@ -13,3 +13,6 @@ npm install --save axios
 npm i react-cookie  
 npm install react-scripts --save  
  npm i cors       
+ 
+ npm install --save recharts 
+ npm install react chart.js
