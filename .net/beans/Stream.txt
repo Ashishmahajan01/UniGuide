@@ -1,0 +1,42 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("Stream")]
+    public class Stream
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int StrmId { get; set; }
+
+        [Required]
+        [MaxLength(255)]
+        public string StrmName { get; set; }
+
+        [MaxLength(int.MaxValue)]
+        public string StrmScope { get; set; }
+
+        public Stream()
+        {
+            // Default constructor
+        }
+
+        public Stream(int strmId)
+        {
+            StrmId = strmId;
+        }
+
+        public Stream(int strmId, string strmName, string strmScope)
+        {
+            StrmId = strmId;
+            StrmName = strmName;
+            StrmScope = strmScope;
+        }
+
+        public override string ToString()
+        {
+            return $"Stream [StrmId={StrmId}, StrmName={StrmName}, StrmScope={StrmScope}]";
+        }
+    }
+}

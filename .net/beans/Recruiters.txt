@@ -1,0 +1,52 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("Recruiters")]
+    public class Recruiters
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int RecuId { get; set; }
+
+        [Required]
+        [MaxLength(255)]
+        public string RecuName { get; set; }
+
+        [MaxLength(255)]
+        public string RecuJobProfile { get; set; }
+
+        [MaxLength(int.MaxValue)]
+        public string RecuJobDesc { get; set; }
+
+        public DateTime RecuRegDate { get; set; }
+
+        public DateTime RecuEndDate { get; set; }
+
+        [MaxLength(255)]
+        public string RecuLink { get; set; }
+
+        public Recruiters()
+        {
+            // Default constructor
+        }
+
+        public Recruiters(int recuId, string recuName, string recuJobProfile, string recuJobDesc, DateTime recuRegDate, DateTime recuEndDate, string recuLink)
+        {
+            RecuId = recuId;
+            RecuName = recuName;
+            RecuJobProfile = recuJobProfile;
+            RecuJobDesc = recuJobDesc;
+            RecuRegDate = recuRegDate;
+            RecuEndDate = recuEndDate;
+            RecuLink = recuLink;
+        }
+
+        public override string ToString()
+        {
+            return $"Recruiters [RecuId={RecuId}, RecuName={RecuName}, RecuJobProfile={RecuJobProfile}, RecuJobDesc={RecuJobDesc}, RecuRegDate={RecuRegDate}, RecuEndDate={RecuEndDate}, RecuLink={RecuLink}]";
+        }
+    }
+}

@@ -1,0 +1,47 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("Feedback")]
+    public class Feedback
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int FeedId { get; set; }
+
+        [ForeignKey("StudentLogin")]
+        public int StudId { get; set; }
+        public StudentLogin StudentLogin { get; set; }
+
+        [ForeignKey("College")]
+        public int ClgId { get; set; }
+        public College College { get; set; }
+
+        public DateTime FeedDate { get; set; }
+
+        [Column(TypeName = "text")]
+        public string FeedDesc { get; set; }
+        public int FeedRating { get; set; }
+
+        public Feedback()
+        {
+        }
+
+        public Feedback(int feedId, int studId, int clgId, DateTime feedDate, string feedDesc, int feedRating)
+        {
+            FeedId = feedId;
+            StudId = studId;
+            ClgId = clgId;
+            FeedDate = feedDate;
+            FeedDesc = feedDesc;
+            FeedRating = feedRating;
+        }
+
+        public override string ToString()
+        {
+            return $"Feedback [feedId={FeedId}, studId={StudId}, clgId={ClgId}, feedDate={FeedDate}, feedDesc={FeedDesc}, feedRating={FeedRating}]";
+        }
+    }
+}

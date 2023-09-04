@@ -1,0 +1,59 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("CollegePredictor")]
+    public class CollegePredictor
+    {
+        [Key]
+        public int ClgprId { get; set; }
+
+        [ForeignKey("College")]
+        public int ClgId { get; set; }
+        public College College { get; set; }
+
+        [ForeignKey("Stream")]
+        public int StrmId { get; set; }
+        public Stream Stream { get; set; }
+
+        [ForeignKey("Branch")]
+        public int BrchId { get; set; }
+        public Branch Branch { get; set; }
+
+        public string ClgprEntranceExam { get; set; }
+        public float ClgprY1 { get; set; }
+        public float ClgprY2 { get; set; }
+        public float ClgprY3 { get; set; }
+        public float ClgprY4 { get; set; }
+        public float ClgprY5 { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public float Average { get; set; }
+
+        public CollegePredictor()
+        {
+        }
+
+        public CollegePredictor(int clgprId, int clgId, int strmId, int brchId, string clgprEntranceExam,
+            float clgprY1, float clgprY2, float clgprY3, float clgprY4, float clgprY5, float average)
+        {
+            ClgprId = clgprId;
+            ClgId = clgId;
+            StrmId = strmId;
+            BrchId = brchId;
+            ClgprEntranceExam = clgprEntranceExam;
+            ClgprY1 = clgprY1;
+            ClgprY2 = clgprY2;
+            ClgprY3 = clgprY3;
+            ClgprY4 = clgprY4;
+            ClgprY5 = clgprY5;
+            Average = average;
+        }
+
+        public override string ToString()
+        {
+            return $"CollegePredictor [clgprId={ClgprId}, clgId={ClgId}, strmId={StrmId}, brchId={BrchId}, clgprEntranceExam={ClgprEntranceExam}, clgprY1={ClgprY1}, clgprY2={ClgprY2}, clgprY3={ClgprY3}, clgprY4={ClgprY4}, clgprY5={ClgprY5}, average={Average}]";
+        }
+    }
+}

@@ -1,0 +1,42 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("Community")]
+    public class Community
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int CommId { get; set; }
+
+        [ForeignKey("StudentLogin")]
+        public int StudId { get; set; }
+        public StudentLogin StudentLogin { get; set; }
+
+        [Column(TypeName = "text")]
+        public string CommAsk { get; set; }
+
+        public DateTime CommAskDate { get; set; }
+        public string CommAskType { get; set; }
+
+        public Community()
+        {
+        }
+
+        public Community(int commId, int studId, string commAsk, DateTime commAskDate, string commAskType)
+        {
+            CommId = commId;
+            StudId = studId;
+            CommAsk = commAsk;
+            CommAskDate = commAskDate;
+            CommAskType = commAskType;
+        }
+
+        public override string ToString()
+        {
+            return $"Community [commId={CommId}, studId={StudId}, commAsk={CommAsk}, commAskDate={CommAskDate}, commAskType={CommAskType}]";
+        }
+    }
+}

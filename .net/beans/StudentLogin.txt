@@ -1,0 +1,73 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("StudentLogin")]
+    public class StudentLogin
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int StudId { get; set; }
+
+        [Required]
+        public UserLogin UserId { get; set; }
+
+        [Required]
+        [MaxLength(255)]
+        public string StudFirstName { get; set; }
+
+        [Required]
+        [MaxLength(255)]
+        public string StudLastName { get; set; }
+
+        [MaxLength(255)]
+        public string StudCity { get; set; }
+
+        [MaxLength(255)]
+        public string StudState { get; set; }
+
+        [MaxLength(255)]
+        public string StudQualification { get; set; }
+
+        [MaxLength(255)]
+        public string StudEntranceExam { get; set; }
+
+        public int StudExamScore { get; set; }
+
+        public int ClgId { get; set; }
+
+        public StudentLogin()
+        {
+            // Default constructor
+        }
+
+        public StudentLogin(int studId, UserLogin userId, string studFirstName, string studLastName, string studCity,
+            string studState, string studQualification, string studEntranceExam, int studExamScore, int clgId)
+        {
+            StudId = studId;
+            UserId = userId;
+            StudFirstName = studFirstName;
+            StudLastName = studLastName;
+            StudCity = studCity;
+            StudState = studState;
+            StudQualification = studQualification;
+            StudEntranceExam = studEntranceExam;
+            StudExamScore = studExamScore;
+            ClgId = clgId;
+        }
+
+        public StudentLogin(int studId)
+        {
+            StudId = studId;
+        }
+
+        public override string ToString()
+        {
+            return $"StudentLogin [StudId={StudId}, UserId={UserId}, StudFirstName={StudFirstName}, " +
+                $"StudLastName={StudLastName}, StudCity={StudCity}, StudState={StudState}, " +
+                $"StudQualification={StudQualification}, StudEntranceExam={StudEntranceExam}, " +
+                $"StudExamScore={StudExamScore}, ClgId={ClgId}]";
+        }
+    }
+}

@@ -1,0 +1,41 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("Event")]
+    public class Event
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int EvtId { get; set; }
+
+        public string EvtName { get; set; }
+        public string EvtLocation { get; set; }
+        public DateTime EvtScheduleOn { get; set; }
+
+        [Column(TypeName = "text")]
+        public string EvtDescription { get; set; }
+        public string EvtOrganizer { get; set; }
+
+        public Event()
+        {
+        }
+
+        public Event(int evtId, string evtName, string evtLocation, DateTime evtScheduleOn, string evtDescription, string evtOrganizer)
+        {
+            EvtId = evtId;
+            EvtName = evtName;
+            EvtLocation = evtLocation;
+            EvtScheduleOn = evtScheduleOn;
+            EvtDescription = evtDescription;
+            EvtOrganizer = evtOrganizer;
+        }
+
+        public override string ToString()
+        {
+            return $"Event [evtId={EvtId}, evtName={EvtName}, evtLocation={EvtLocation}, evtScheduleOn={EvtScheduleOn}, evtDescription={EvtDescription}, evtOrganizer={EvtOrganizer}]";
+        }
+    }
+}

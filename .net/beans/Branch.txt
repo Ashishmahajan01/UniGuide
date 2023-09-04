@@ -1,0 +1,37 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("Branch")]
+    public class Branch
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int BrchId { get; set; }
+
+        public string BrchName { get; set; }
+        public string BrchDuration { get; set; }
+
+        public Branch()
+        {
+        }
+
+        public Branch(int brchId)
+        {
+            BrchId = brchId;
+        }
+
+        public Branch(int brchId, string brchName, string brchDuration)
+        {
+            BrchId = brchId;
+            BrchName = brchName;
+            BrchDuration = brchDuration;
+        }
+
+        public override string ToString()
+        {
+            return $"Branch [brchId={BrchId}, brchName={BrchName}, brchDuration={BrchDuration}]";
+        }
+    }
+}

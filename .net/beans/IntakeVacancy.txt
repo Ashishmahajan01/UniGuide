@@ -1,0 +1,53 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("IntakeVacancy")]
+    public class IntakeVacancy
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int InvcId { get; set; }
+
+        [ForeignKey("College")]
+        public int ClgId { get; set; }
+        public College College { get; set; }
+
+        [ForeignKey("Stream")]
+        public int StrmId { get; set; }
+        public Stream Stream { get; set; }
+
+        [ForeignKey("Branch")]
+        public int BrchId { get; set; }
+        public Branch Branch { get; set; }
+
+        public int InvcSeats { get; set; }
+        public double InvcFees { get; set; }
+
+        [Column(TypeName = "text")]
+        public string InvcDocuments { get; set; }
+        public int InvcVacancy { get; set; }
+
+        public IntakeVacancy()
+        {
+        }
+
+        public IntakeVacancy(int invcId, int clgId, int strmId, int brchId, int invcSeats, double invcFees, string invcDocuments, int invcVacancy)
+        {
+            InvcId = invcId;
+            ClgId = clgId;
+            StrmId = strmId;
+            BrchId = brchId;
+            InvcSeats = invcSeats;
+            InvcFees = invcFees;
+            InvcDocuments = invcDocuments;
+            InvcVacancy = invcVacancy;
+        }
+
+        public override string ToString()
+        {
+            return $"IntakeVacancy [invcId={InvcId}, clgId={ClgId}, strmId={StrmId}, brchId={BrchId}, invcSeats={InvcSeats}, invcFees={InvcFees}, invcDocuments={InvcDocuments}, invcVacancy={InvcVacancy}]";
+        }
+    }
+}

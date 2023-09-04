@@ -1,0 +1,57 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("College")]
+    public class College
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ClgId { get; set; }
+
+        [ForeignKey("University")]
+        public int UniId { get; set; }
+        public University University { get; set; }
+
+        public string ClgName { get; set; }
+        public string ClgAddress { get; set; }
+        public string ClgCity { get; set; }
+        public string ClgState { get; set; }
+        public string ClgWebsite { get; set; }
+
+        [Column(TypeName = "text")]
+        public string ClgDescription { get; set; }
+
+        [Column(TypeName = "text")]
+        public string ClgImg { get; set; }
+
+        public College()
+        {
+        }
+
+        public College(int clgId)
+        {
+            ClgId = clgId;
+        }
+
+        public College(int clgId, int uniId, string clgName, string clgAddress, string clgCity, string clgState,
+            string clgWebsite, string clgDescription, string clgImg)
+        {
+            ClgId = clgId;
+            UniId = uniId;
+            ClgName = clgName;
+            ClgAddress = clgAddress;
+            ClgCity = clgCity;
+            ClgState = clgState;
+            ClgWebsite = clgWebsite;
+            ClgDescription = clgDescription;
+            ClgImg = clgImg;
+        }
+
+        public override string ToString()
+        {
+            return $"College [clgId={ClgId}, uniId={UniId}, clgName={ClgName}, clgAddress={ClgAddress}, clgCity={ClgCity}, clgState={ClgState}, clgWebsite={ClgWebsite}, clgDescription={ClgDescription}, clgImg={ClgImg}]";
+        }
+    }
+}

@@ -1,0 +1,40 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace YourNamespace
+{
+    [Table("collegeRanking")]
+    public class Ranking
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int RnkId { get; set; }
+
+        [ForeignKey("ClgId")]
+        public College Clg { get; set; }
+
+        [ForeignKey("StrmId")]
+        public Stream Strm { get; set; }
+
+        public int NirfRank { get; set; }
+
+        public Ranking()
+        {
+            // Default constructor
+        }
+
+        public Ranking(int rnkId, College clgId, Stream strmId, int nirfRank)
+        {
+            RnkId = rnkId;
+            Clg = clgId;
+            Strm = strmId;
+            NirfRank = nirfRank;
+        }
+
+        public override string ToString()
+        {
+            return $"Ranking [RnkId={RnkId}, ClgId={Clg?.ClgId}, StrmId={Strm?.StrmId}, NirfRank={NirfRank}]";
+        }
+    }
+}
